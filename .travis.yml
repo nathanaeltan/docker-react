@@ -5,8 +5,7 @@ services:
 before_install:
   - docker build -t nathanaeltan/docker-react -f Dockerfile.dev .
 
-script:
-  - docker run nathanaeltan/docker-react npm run test -- --coverage
+
 
 deploy:
   provider: elasticbeanstalk
@@ -18,5 +17,4 @@ deploy:
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: 
-    secure: "$AWS_SECRET_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
